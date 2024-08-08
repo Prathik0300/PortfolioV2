@@ -9,10 +9,17 @@ import {
 } from "./styles";
 import classNames from "classnames";
 import { NavbarItemsType } from "./types";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const { activeNavItem } = useAppContextValues();
   const { setActiveNavItem } = useAppContextUpdater();
+
+  useEffect(() => {
+    if (activeNavItem?.isCustomHandler && activeNavItem?.handler) {
+      activeNavItem.handler();
+    }
+  }, [activeNavItem]);
 
   const handleNavItemClick = (navItem: NavbarItemsType) => {
     return () => {

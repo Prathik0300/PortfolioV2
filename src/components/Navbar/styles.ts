@@ -48,7 +48,7 @@ export const activeContent = (isElementLeftOfActiveNavItem: boolean) => css`
     width: 100%;
     ${isElementLeftOfActiveNavItem ? "right: 0;" : "left: 0;"};
     bottom: -3px;
-    background-color: rgb(239, 180, 53);
+    background-color: var(--primary);
     transition: 300ms;
   }
 `;
