@@ -21,27 +21,33 @@ export const NavbarItems = [
     handler: downloadResume,
   },
   {
+    displayName: "Experience",
+    id: "experience",
+    navIndex: 3,
+    isCustomHandler: false,
+  },
+  {
     displayName: "Services",
     id: "services",
-    navIndex: 3,
+    navIndex: 4,
     isCustomHandler: false,
   },
   {
     displayName: "Skills",
     id: "skills",
-    navIndex: 4,
+    navIndex: 5,
     isCustomHandler: false,
   },
   {
     displayName: "Projects",
     id: "projects",
-    navIndex: 5,
+    navIndex: 6,
     isCustomHandler: false,
   },
   {
     displayName: "Contact",
     id: "contact",
-    navIndex: 6,
+    navIndex: 7,
     isCustomHandler: false,
   },
 ] as const;

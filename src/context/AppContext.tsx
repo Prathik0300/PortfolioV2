@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useMemo, useState, useRef } from "react";
 import { NavbarItems } from "../components/Navbar/constants";
 import { NavbarItemsType } from "../components/Navbar/types";
 import { AppContextUpdaterType, AppContextValueType } from "./types";
@@ -10,8 +10,15 @@ const AppContextProvider = ({ children }: any) => {
   const [activeNavItem, setActiveNavItem] = useState<NavbarItemsType>(
     NavbarItems[0]
   );
+  const homeRef = useRef(null);
+  const aboutMeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const experienceRef = useRef(null);
 
-  const appContextValue = useMemo(() => ({ activeNavItem }), [activeNavItem]);
+  const appContextValue = useMemo(
+    () => ({ activeNavItem, homeRef, aboutMeRef, skillsRef, experienceRef }),
+    [activeNavItem, homeRef, aboutMeRef, skillsRef, experienceRef]
+  );
   const appContextUpdater = useMemo(
     () => ({ setActiveNavItem }),
     [setActiveNavItem]

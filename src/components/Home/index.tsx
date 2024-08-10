@@ -11,15 +11,21 @@ import {
   primaryColor,
   chevronContainer,
 } from "./styles";
-import downArrow from "@/src/lottie/arrowDown.json";
+import downArrow from "@/public/assets/lottie/arrowDown.json";
 import ContactMe from "../ContactMe";
 import useIsMobile from "@/src/lib/hooks/useIsMobile";
+import { useAppContextValues } from "@/src/context/hooks/useAppContextValues";
+import { useScrollTo } from "@/src/lib/hooks/useScrollTo";
+// import { useIntersectionObserver } from "@/src/lib/hooks/useIntersectionObserver";
 
 const PortfolioHome = () => {
   const isMobile = useIsMobile();
+  const { homeRef, aboutMeRef } = useAppContextValues();
+  const { scrollTo } = useScrollTo();
+  // useIntersectionObserver({ element: homeRef, rootMargin: "0px" });
   return (
     <>
-      <div className={HomeContainer}>
+      <div ref={homeRef} className={HomeContainer}>
         <div data-aos="fade-right" className={homeContentContainer}>
           <p className={greetingContainer}>HELLO!</p>
           <p>
@@ -40,14 +46,13 @@ const PortfolioHome = () => {
         {!isMobile && <ContactMe />}
       </div>
       <div className={chevronContainer}>
-        <a>
-          <LottieInit
-            isCursorPointer
-            animationData={downArrow}
-            height={80}
-            width={80}
-          />
-        </a>
+        <LottieInit
+          isCursorPointer
+          animationData={downArrow}
+          height={80}
+          width={80}
+          onClickHandler={scrollTo(aboutMeRef)}
+        />
       </div>
     </>
   );
