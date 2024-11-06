@@ -9,7 +9,7 @@ import { CacheProvider } from "@emotion/react";
 import { AppCacheProvider } from "@mui/material-nextjs/v14-pagesRouter";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Rubik } from "next/font/google";
-import { AOSInit } from "@/src/lib/AOS/aos";
+// import { AOSInit } from "@/src/lib/AOS/aos";
 
 const rubik = Rubik({
   weight: ["300", "400", "500", "700"],
@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <CacheProvider value={cache}>
             <AppCacheProvider {...pageProps}>
               <ThemeProvider theme={theme}>
-                <AOSInit />
+                {/* <AOSInit /> */}
                 <Component {...pageProps} />
               </ThemeProvider>
             </AppCacheProvider>

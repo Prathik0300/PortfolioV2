@@ -1,6 +1,8 @@
 import { LOTTIE_DEFAULT_SETTINGS } from "@/src/constants";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
 import { lottieStyles } from "./styles";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 const LottieApp = ({
   isCursorPointer,
   animationData,

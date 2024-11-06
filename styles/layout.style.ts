@@ -18,7 +18,7 @@ export const titleContainer = css`
 
 export const titleContent = css`
   position: sticky;
-  top: 5%;
+  top: 60px;
   font-size: 25px;
   font-weight: bold;
   text-decoration: underline;
@@ -34,4 +34,11 @@ export const contentContainer = css`
   flex-direction: column;
   gap: 35px;
   text-align: justify;
+`;
+
+export const divider = css`
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
 `;

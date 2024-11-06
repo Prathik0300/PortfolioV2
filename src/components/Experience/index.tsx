@@ -4,6 +4,7 @@ import {
   titleContainer,
   contentContainer,
   titleContent,
+  divider,
 } from "@/styles/layout.style";
 import {
   experienceContainer,
@@ -12,7 +13,6 @@ import {
   stepLabel,
   stepper,
   duration,
-  divider,
   customContentContainerForExperience,
 } from "./styles";
 import Stepper from "@mui/material/Stepper";

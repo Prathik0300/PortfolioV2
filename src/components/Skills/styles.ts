@@ -1,36 +1,30 @@
 import { css } from "@emotion/css";
 
-export const skillsContainer = css`
-  height: 100%;
-  width: 100%;
-  padding: 40px;
-  display: flex;
-  position: relative;
-`;
-
-export const titleContainer = css`
-  width: 20%;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-`;
-
-export const titleContent = (isSectionInView: boolean) => css`
-  position: ${isSectionInView ? "sticky" : ""};
-  top: 5%;
-  font-size: 30px;
+export const skillRowContainer = css`
+  font-size: 18px;
   font-weight: bold;
-  text-decoration: underline;
-  color: var(--primary);
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 
-export const contentContainer = css`
-  width: 80%;
-  font-size: 30px;
+export const skillRow = css`
   display: flex;
-  align-items: start;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+`;
+
+export const logoContainer = css`
+  display: flex;
   flex-direction: column;
-  gap: 35px;
-  text-align: justify;
+  justify-content: start;
+  align-items: center;
+  font-size: 20px;
+  gap: 12px;
+  svg {
+    width: 70px;
+    height: 70px;
+  }
 `;

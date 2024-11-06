@@ -5,6 +5,10 @@ export const navbarContainer = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--black) !important;
+  z-index: 2;
 `;
 
 export const navbarContentWrapper = css`
@@ -15,6 +19,8 @@ export const navbarContentWrapper = css`
   align-items: center;
   justify-content: center;
   padding: 20px;
+  background-color: var(--black) !important;
+  z-index: 2;
 `;
 
 export const navbarContent = css`

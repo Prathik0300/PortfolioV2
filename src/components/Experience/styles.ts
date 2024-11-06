@@ -14,13 +14,6 @@ export const experienceContainer = css`
   position: relative;
 `;
 
-export const divider = css`
-  height: 1px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  border: none;
-`;
-
 export const experienceTitle = css`
   display: flex;
   align-items: start;
