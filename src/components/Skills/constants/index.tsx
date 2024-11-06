@@ -2,10 +2,9 @@ import Python from "@/public/assets/icons/python.svg";
 import Azure from "@/public/assets/icons/azure-icon.svg";
 import Css from "@/public/assets/icons/css.svg";
 import Docker from "@/public/assets/icons/docker.svg";
-import Github from "@/public/assets/icons/github.svg";
+import Git from "@/public/assets/icons/git.svg";
 import Html from "@/public/assets/icons/html.svg";
 import Javascript from "@/public/assets/icons/javascript.svg";
-import Jest from "@/public/assets/icons/jest.svg";
 import MongoDb from "@/public/assets/icons/mongodb.svg";
 import Next from "@/public/assets/icons/next-js.svg";
 import Node from "@/public/assets/icons/nodejs.svg";
@@ -42,7 +41,7 @@ export const SKILL_SECTIONS = [
         name: "Typescript",
         logo: <Typescript />,
         sectionEnd: false,
-      }
+      },
     ],
   },
   {
@@ -88,8 +87,8 @@ export const SKILL_SECTIONS = [
         name: "CSS",
         logo: <Css />,
         sectionEnd: true,
-      }
-    ]
+      },
+    ],
   },
   {
     section_name: "Databases",
@@ -108,7 +107,7 @@ export const SKILL_SECTIONS = [
       },
     ],
   },
-    {
+  {
     section_name: "Container and Cloud Services",
     skills: [
       {
@@ -122,7 +121,7 @@ export const SKILL_SECTIONS = [
         name: "Docker",
         logo: <Docker />,
         sectionEnd: true,
-      }
+      },
     ],
   },
   {
@@ -131,9 +130,9 @@ export const SKILL_SECTIONS = [
       {
         id: 0,
         name: "Git",
-        logo: <Github />,
+        logo: <Git />,
         sectionEnd: true,
       },
     ],
-  }
+  },
 ];

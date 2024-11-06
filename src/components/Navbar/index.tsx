@@ -10,10 +10,12 @@ import {
 import classNames from "classnames";
 import { NavbarItemsType } from "./types";
 import { useEffect } from "react";
+import { useScrollTo } from "@/src/lib/hooks/useScrollTo";
 
 const Navbar = () => {
   const { activeNavItem } = useAppContextValues();
   const { setActiveNavItem } = useAppContextUpdater();
+  const { scrollToId } = useScrollTo();
 
   useEffect(() => {
     if (activeNavItem?.isCustomHandler && activeNavItem?.handler) {
@@ -23,12 +25,16 @@ const Navbar = () => {
 
   const handleNavItemClick = (navItem: NavbarItemsType) => {
     return () => {
-      if (activeNavItem?.id === navItem.id) return;
+      if (activeNavItem?.id === navItem.id) {
+        scrollToId(navItem.id);
+        return;
+      }
       if (setActiveNavItem) {
         setActiveNavItem((prevNavItem: NavbarItemsType) => ({
           ...navItem,
           isElementLeftOfActiveNavItem: navItem.navIndex < prevNavItem.navIndex,
         }));
+        scrollToId(navItem.id);
       }
     };
   };

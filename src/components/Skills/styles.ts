@@ -17,6 +17,7 @@ export const skillRow = css`
 `;
 
 export const logoContainer = css`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -26,5 +27,16 @@ export const logoContainer = css`
   svg {
     width: 70px;
     height: 70px;
+  }
+`;
+
+export const logoWrapper = css`
+  cursor: pointer;
+
+  :hover {
+    svg {
+      transition: transform 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
   }
 `;

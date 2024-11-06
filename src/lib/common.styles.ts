@@ -5,3 +5,7 @@ export const preventSelect = css`
   -ms-user-select: none;
   user-select: none;
 `;
+
+export const offsetDiv = css`
+  height: 30px;
+`

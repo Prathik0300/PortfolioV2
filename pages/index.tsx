@@ -12,8 +12,8 @@ const PortfolioContainer = () => {
       <Navbar />
       <PortfolioHome />
       <AboutMe />
-      <Experience />
       <Skills />
+      <Experience />
     </>
   );
 };

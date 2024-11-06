@@ -9,7 +9,7 @@ export const NavbarItems = [
   },
   {
     displayName: "About",
-    id: "about",
+    id: "aboutMe",
     navIndex: 1,
     isCustomHandler: false,
   },
