@@ -21,6 +21,18 @@ export default function App({ Component, pageProps }: AppProps) {
     typography: {
       fontFamily: rubik.style.fontFamily,
     },
+    palette: {
+      primary: {
+        main: "#efb435",
+      },
+    },
+    // components: {
+    //   MuiFormLabel: {
+    //     styleOverrides: {
+    //       asterisk: { color: "#000" },
+    //     },
+    //   },
+    // },
   });
   const cache = createCache({ key: "custom-css" });
   const [queryClient] = useState(
@@ -33,7 +45,6 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       })
   );
-
 
   return (
     <QueryClientProvider client={queryClient}>

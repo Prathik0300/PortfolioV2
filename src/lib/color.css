@@ -1,5 +1,8 @@
 :root {
     --primary: #efb435;
+    --primaryBorder: rgba(239, 180, 53, 0.6);
     --white: #fff;
+    --beige: #f5f5dc;
+    --fadedWhite: rgba(255, 255, 255, 0.9);
     --black: #000;
 }

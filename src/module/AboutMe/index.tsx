@@ -12,7 +12,7 @@ const AboutMe = () => {
   const { aboutMeRef } = useAppContextValues();
   return (
     <>
-      <div className={offsetDiv} ref={aboutMeRef}></div>
+      <div className={offsetDiv} ref={aboutMeRef} />
       <div className={container} id="aboutMe">
         <div className={titleContainer}>
           <div className={`animate ${titleContent}`}>ABOUT ME</div>

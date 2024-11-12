@@ -36,7 +36,7 @@ const Skills = () => {
   const { skillsRef } = useAppContextValues();
   return (
     <>
-      <div ref={skillsRef} className={offsetDiv}></div>
+      <div ref={skillsRef} className={offsetDiv} />
       <div className={container}>
         <div className={titleContainer}>
           <div className={classNames("animate", titleContent)}>SKILLS</div>

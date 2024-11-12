@@ -50,7 +50,7 @@ export const hireMeBtn = css`
   background: var(--primary);
   color: var(--black);
   border: 1px solid black;
-
+  position: relative;
   :hover {
     background: ;
   }
@@ -68,3 +68,7 @@ export const chevronContainer = css`
   justify-content: center;
   width: 100%;
 `;
+
+export const popupRefStyle = css`
+  display: none;
+`

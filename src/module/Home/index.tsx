@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import LottieInit from "@/src/lib/Lottie";
 import {
   btn,
@@ -10,19 +11,34 @@ import {
   myWorksBtn,
   primaryColor,
   chevronContainer,
+  popupRefStyle,
 } from "./styles";
+import dynamic from "next/dynamic";
 import downArrow from "@/public/assets/lottie/arrowDown.json";
-import ContactMe from "../ContactMe";
+import Socials from "../../components/Socials";
 import useIsMobile from "@/src/lib/hooks/useIsMobile";
 import { useAppContextValues } from "@/src/context/hooks/useAppContextValues";
 import { useScrollTo } from "@/src/lib/hooks/useScrollTo";
-// import { useIntersectionObserver } from "@/src/lib/hooks/useIntersectionObserver";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Image from "next/image";
 
+const Popup = dynamic(() => import("@/src/components/Popup"), { ssr: false });
 const PortfolioHome = () => {
   const isMobile = useIsMobile();
-  const { homeRef, aboutMeRef } = useAppContextValues();
+  const [hireMePopupOpen, setHireMePopupOpen] = useState(false);
+  const popupRef = useRef<null | HTMLDivElement>(null);
+  const { homeRef, aboutMeRef, projectRef, hireMeRef } = useAppContextValues();
   const { scrollTo } = useScrollTo();
-  // useIntersectionObserver({ element: homeRef, rootMargin: "0px" });
+
+  const toggleHireMePopup = () => {
+    setHireMePopupOpen((prevState) => !prevState);
+  };
+
+  const closePopup = (e: MouseEvent | TouchEvent) => {
+    if (popupRef.current && !popupRef.current.contains(e.target as Node))
+      setHireMePopupOpen(false);
+  };
+
   return (
     <>
       <div ref={homeRef} className={HomeContainer}>
@@ -35,15 +51,30 @@ const PortfolioHome = () => {
           <p className={jobInterest}>Fullstack Web Developer</p>
           <div className={buttonContainer}>
             <a
-              href="mailto:prathik.pugazhenthi0300@gmail.com"
+              ref={hireMeRef}
+              onClick={toggleHireMePopup}
+              aria-describedby="hireMePopup"
+              // href="mailto:prathik.pugazhenthi0300@gmail.com"
               className={`${btn} ${hireMeBtn}`}
             >
               HIRE ME
             </a>
-            <a className={`${btn} ${myWorksBtn}`}>MY WORKS</a>
+            {hireMePopupOpen && (
+              <ClickAwayListener onClickAway={closePopup}>
+                <div className={popupRefStyle} ref={popupRef}>
+                  <Popup anchor={hireMeRef?.current} id="hireMePopup" />
+                </div>
+              </ClickAwayListener>
+            )}
+            <a
+              className={`${btn} ${myWorksBtn}`}
+              onClick={scrollTo(projectRef)}
+            >
+              MY WORKS
+            </a>
           </div>
         </div>
-        {!isMobile && <ContactMe />}
+        {!isMobile && <Socials />}
       </div>
       <div className={chevronContainer}>
         <LottieInit

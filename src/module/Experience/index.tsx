@@ -28,7 +28,7 @@ const Experience = () => {
   const { experienceRef } = useAppContextValues();
   return (
     <>
-      <div className={offsetDiv} ref={experienceRef}></div>
+      <div className={offsetDiv} ref={experienceRef} />
       <div className={container}>
         <div className={classNames("animate", titleContainer)}>
           <div className={titleContent}>EXPERIENCE</div>

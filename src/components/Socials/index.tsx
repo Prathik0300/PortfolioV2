@@ -4,7 +4,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { contactContainer } from "./styles";
 
-const ContactMe = () => {
+const Socials = () => {
   return (
     <div data-aos="fade-left" className={contactContainer}>
       <a
@@ -26,4 +26,4 @@ const ContactMe = () => {
   );
 };
 
-export default ContactMe;
+export default Socials;

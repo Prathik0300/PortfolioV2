@@ -9,3 +9,9 @@ export const preventSelect = css`
 export const offsetDiv = css`
   height: 30px;
 `
+
+export const alignCenter = css`
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+`;
